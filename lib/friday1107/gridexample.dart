@@ -40,7 +40,7 @@ class CalculatorExmp extends StatelessWidget {
                     Expanded(
                       child: ElevatedButton(
                         onPressed: null,
-                        child: Text("2"),
+                        child: Text("3"),
                       ),
                     ),
                     SizedBox(
