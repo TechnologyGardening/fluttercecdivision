@@ -15,46 +15,8 @@ class CalculatorExmp extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Expanded(
-                      child: ElevatedButton(
-                        onPressed: null,
-                        child: Text("1"),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 4,
-                    ),
-                    Expanded(
-                      child: ElevatedButton(
-                        onPressed: null,
-                        child: Text("1"),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 4,
-                    ),
-                    Expanded(
-                      child: ElevatedButton(
-                        onPressed: null,
-                        child: Text("3"),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 4,
-                    ),
-                    Expanded(
-                      child: ElevatedButton(
-                        onPressed: null,
-                        child: Text("1"),
-                      ),
-                    )
-                  ],
-                ),
-                Text("Text2"),
+                CustomRow(),
+                CustomRow1(),
                 Text("Text1"),
                 Text("Text2"),
                 Text("Text1"),
@@ -64,6 +26,104 @@ class CalculatorExmp extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class CustomRow extends StatelessWidget {
+  const CustomRow({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Expanded(
+          child: ElevatedButton(
+            onPressed: null,
+            child: Icon(Icons.remove, color: Colors.black, size: 24),
+          ),
+        ),
+        SizedBox(
+          width: 4,
+        ),
+        Expanded(
+          child: ElevatedButton(
+            onPressed: null,
+            child: Icon(Icons.add, color: Colors.black, size: 24),
+          ),
+        ),
+        SizedBox(
+          width: 4,
+        ),
+        Expanded(
+          child: ElevatedButton(
+            onPressed: null,
+            child: Text("3"),
+          ),
+        ),
+        SizedBox(
+          width: 4,
+        ),
+        Expanded(
+          child: ElevatedButton(
+            onPressed: null,
+            child: Text("1"),
+          ),
+        )
+      ],
+    );
+  }
+}
+
+class CustomRow1 extends StatelessWidget {
+  const CustomRow1({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Expanded(
+          child: ElevatedButton(
+            onPressed: null,
+            child: Text("1"),
+          ),
+        ),
+        SizedBox(
+          width: 4,
+        ),
+        Expanded(
+          child: ElevatedButton(
+            onPressed: null,
+            child: Text("1"),
+          ),
+        ),
+        SizedBox(
+          width: 4,
+        ),
+        Expanded(
+          child: ElevatedButton(
+            onPressed: null,
+            child: Text("3"),
+          ),
+        ),
+        SizedBox(
+          width: 4,
+        ),
+        Expanded(
+          child: ElevatedButton(
+            onPressed: null,
+            child: Text("1"),
+          ),
+        )
+      ],
     );
   }
 }
