@@ -38,7 +38,7 @@ class _StopWatchState extends State<StopWatch> {
             const SizedBox(height: 20),
             Expanded(child: controlPanel()),
             const SizedBox(height: 20),
-            Expanded(child: _buildDisplay()),
+            Expanded(child: _builderDisplay()),
           ],
         ),
       ),
@@ -115,6 +115,20 @@ class _StopWatchState extends State<StopWatch> {
   String _secondToText1(int i1) {
     final seconds = i1 / 1000;
     return '$seconds seconds';
+  }
+
+  Widget _builderDisplay() {
+    return ListView.builder(
+      itemCount: laps.length,
+      itemBuilder: (context, index) {
+        final i = laps[index];
+        return ListTile(
+          contentPadding: const EdgeInsets.symmetric(horizontal: 20),
+          title: Text('Lap ${index + 1}'),
+          trailing: Text(_secondToText1(i)),
+        );
+      },
+    );
   }
 
   Widget _buildDisplay() {
