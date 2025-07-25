@@ -118,17 +118,19 @@ class _StopWatchState extends State<StopWatch> {
   }
 
   Widget _buildDisplay() {
-    return ListView(
-      children: [
-        for (int i in laps)
-          ListTile(
-            leading: const Icon(Icons.timer),
-            title: Text(
-              _secondToText1(i),
+    return Scrollbar(
+      child: ListView(
+        children: [
+          for (int i in laps)
+            ListTile(
+              leading: const Icon(Icons.timer),
+              title: Text(
+                _secondToText1(i),
+              ),
+              trailing: const Text("Seconds"),
             ),
-            trailing: const Text("Seconds"),
-          ),
-      ],
+        ],
+      ),
     );
   }
 
