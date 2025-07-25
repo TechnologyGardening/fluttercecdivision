@@ -31,10 +31,14 @@ class _StopWatchState extends State<StopWatch> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text('${_secondToText()}',
-                style: Theme.of(context).textTheme.headlineSmall),
+            Expanded(
+              child: Text('${_secondToText()}',
+                  style: Theme.of(context).textTheme.headlineSmall),
+            ),
             const SizedBox(height: 20),
-            controlPanel()
+            Expanded(child: controlPanel()),
+            const SizedBox(height: 20),
+            Expanded(child: _buildDisplay()),
           ],
         ),
       ),
@@ -108,6 +112,26 @@ class _StopWatchState extends State<StopWatch> {
     }
   }
 
+  String _secondToText1(int i1) {
+    final seconds = i1 / 1000;
+    return '$seconds seconds';
+  }
+
+  Widget _buildDisplay() {
+    return ListView(
+      children: [
+        for (int i in laps)
+          ListTile(
+            leading: const Icon(Icons.timer),
+            title: Text(
+              _secondToText1(i),
+            ),
+            trailing: const Text("Seconds"),
+          ),
+      ],
+    );
+  }
+
   void _pauseTimer() {
     setState(() {
       _isTicking = !_isTicking;
@@ -131,6 +155,7 @@ class _StopWatchState extends State<StopWatch> {
   void _stopTimer() {
     timer.cancel();
     setState(() {
+      laps.clear();
       millis = 0;
       second = 0;
       _isTicking = false;
