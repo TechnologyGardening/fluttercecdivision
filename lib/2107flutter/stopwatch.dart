@@ -12,6 +12,8 @@ class _StopWatchState extends State<StopWatch> {
   int second = 0;
   late Timer timer;
   bool _isTicking = false;
+  final laps = <int>[];
+
   String _secondToText() {
     final seconds = millis / 1000;
     return '$seconds seconds';
@@ -70,6 +72,15 @@ class _StopWatchState extends State<StopWatch> {
           ),
           child: const Icon(Icons.stop),
         ),
+        const SizedBox(width: 10),
+        ElevatedButton(
+          onPressed: _isTicking ? _lapclick : null,
+          style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+            foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+          ),
+          child: const Icon(Icons.timer),
+        ),
       ],
     );
   }
@@ -77,6 +88,14 @@ class _StopWatchState extends State<StopWatch> {
   @override
   void initState() {
     super.initState();
+  }
+
+  void _lapclick() {
+    setState(() {
+      laps.add(millis);
+      millis = 0;
+      print(laps);
+    });
   }
 
   void _onTick(Timer timer) {
