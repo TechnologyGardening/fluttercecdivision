@@ -50,7 +50,7 @@ class _StopWatchState extends State<StopWatch> {
             backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
             foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
           ),
-          child: const Text('Start'),
+          child: const Icon(Icons.start),
         ),
         const SizedBox(width: 10),
         ElevatedButton(
@@ -59,7 +59,7 @@ class _StopWatchState extends State<StopWatch> {
             backgroundColor: MaterialStateProperty.all<Color>(Colors.orange),
             foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
           ),
-          child: Text(_isTicking ? 'Pause' : 'Resume'),
+          child: Icon(_isTicking ? Icons.pause : Icons.play_arrow),
         ),
         const SizedBox(width: 10),
         ElevatedButton(
@@ -68,7 +68,7 @@ class _StopWatchState extends State<StopWatch> {
             backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
             foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
           ),
-          child: const Text('Stop'),
+          child: const Icon(Icons.stop),
         ),
       ],
     );
