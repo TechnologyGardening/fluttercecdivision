@@ -13,6 +13,8 @@ class _StopWatchState extends State<StopWatch> {
   late Timer timer;
   bool _isTicking = false;
   final laps = <int>[];
+  final itemheight = 60;
+  final abc = ScrollController();
 
   String _secondToText() {
     final seconds = millis / 1000;
@@ -98,8 +100,12 @@ class _StopWatchState extends State<StopWatch> {
     setState(() {
       laps.add(millis);
       millis = 0;
-      print(laps);
     });
+    abc.animateTo(
+      (itemheight * laps.length).toDouble(),
+      duration: const Duration(seconds: 1),
+      curve: Curves.easeIn,
+    );
   }
 
   void _onTick(Timer timer) {
@@ -119,6 +125,8 @@ class _StopWatchState extends State<StopWatch> {
 
   Widget _builderDisplay() {
     return ListView.builder(
+      controller: abc,
+      itemExtent: itemheight.toDouble(),
       itemCount: laps.length,
       itemBuilder: (context, index) {
         final i = laps[index];
