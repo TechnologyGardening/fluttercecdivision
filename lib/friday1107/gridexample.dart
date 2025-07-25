@@ -16,6 +16,9 @@ class CalculatorExmp extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CustomRow(),
+                SizedBox(
+                  height: 10,
+                ),
                 CustomRow1(),
                 Text("Text1"),
                 Text("Text2"),
