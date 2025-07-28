@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttercecdivision/2107flutter/loginscreen.dart';
 import 'package:fluttercecdivision/2107flutter/stopwatch.dart';
 // import 'package:fluttercecdivision/friday1107/first_experiment.dart';
 // import 'package:fluttercecdivision/friday1107/gridexample.dart';
@@ -14,8 +15,8 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: StopWatch(),
-    );
+        debugShowCheckedModeBanner: false, home: LoginScreen()
+        // home: StopWatch(),
+        );
   }
 }
