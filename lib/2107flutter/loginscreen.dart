@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttercecdivision/2107flutter/stopwatch.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -76,6 +77,8 @@ class _LoginScreenState extends State<LoginScreen> {
     if (form?.validate() == true) {
       // logic for validated
       print('validated');
+      Navigator.of(context).push(MaterialPageRoute(
+          builder: (_) => StopWatch(name: name, email: email)));
     } else {
       print('not validated');
     }
@@ -84,5 +87,12 @@ class _LoginScreenState extends State<LoginScreen> {
       name = _nameController.text;
       email = _emailController.text;
     });
+  }
+
+  @override
+  void dispose() {
+    _nameController.dispose();
+    _emailController.dispose();
+    super.dispose();
   }
 }
