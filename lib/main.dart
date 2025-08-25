@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttercecdivision/0408flutter/currencyconverter.dart';
 import 'package:fluttercecdivision/2107flutter/loginscreen.dart';
 import 'package:fluttercecdivision/2107flutter/stopwatch.dart';
 // import 'package:fluttercecdivision/friday1107/first_experiment.dart';
@@ -15,7 +16,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-        debugShowCheckedModeBanner: false, home: LoginScreen()
+        debugShowCheckedModeBanner: false, home: CurrencyConverter()
         // home: StopWatch(),
         );
   }
