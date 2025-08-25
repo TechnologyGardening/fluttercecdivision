@@ -13,7 +13,7 @@ class WeatherService {
         'appid': _apikey,
         'units': 'metric',
       });
-      return response.data;
+      return response.data.toString();
     } catch (e) {
       throw Exception('Failed to fetch weather data: $e');
     }
